@@ -1,4 +1,4 @@
-package tw.Object0731;
+package tw.Object;
 
 import java.util.Random;
 

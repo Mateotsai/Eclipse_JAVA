@@ -1,6 +1,6 @@
 package tw.mateo0731.javaClass;
 
-import tw.Object0731.Scooter;
+import tw.Object.Scooter;
 
 public class lesson04_Object_Scooter {
 

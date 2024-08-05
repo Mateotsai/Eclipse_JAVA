@@ -1,4 +1,4 @@
-package tw.Object0731;
+package tw.Object;
 
 //定義"物件"的"類別class"
 public class Bike {

@@ -1,4 +1,4 @@
-package tw.Object0731;
+package tw.Object;
 
 public class Car extends Scooter {
 	//1.任何類別都一定要有建構式

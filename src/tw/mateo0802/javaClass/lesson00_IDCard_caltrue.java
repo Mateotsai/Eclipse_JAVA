@@ -2,7 +2,7 @@ package tw.mateo0802.javaClass;
 
 import java.util.Random;
 
-import tw.Object0731.TWid;
+import tw.Object.TWid;
 
 public class lesson00_IDCard_caltrue {
 

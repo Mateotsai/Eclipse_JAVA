@@ -1,6 +1,6 @@
 package tw.mateo0801.javaClass;
 
-import tw.Object0731.Bike;
+import tw.Object.Bike;
 
 public class lesson02_String {
 

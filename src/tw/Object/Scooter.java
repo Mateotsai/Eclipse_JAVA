@@ -1,4 +1,4 @@
-package tw.Object0731;
+package tw.Object;
 
 public class Scooter extends Bike{ //延伸Bike封裝的功能，實現物件導向繼承觀念
 	

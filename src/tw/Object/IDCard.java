@@ -1,4 +1,4 @@
-package tw.Object0731;
+package tw.Object;
 
 public class IDCard {
 	private String id; //當這個方法執行完，這個String就會擁有ID這個屬性
