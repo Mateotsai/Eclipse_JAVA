@@ -7,7 +7,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 //import javax.swing.JTextArea;
 
-import tw.Object.MyPanel;
+import tw.IDPanel.MyPanel;
 
 
 public class MySign extends JFrame{

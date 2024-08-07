@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 
 public class lesson06_IO {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		FileInputStream fin = new FileInputStream("./dir1/file1.txt");
 
 	

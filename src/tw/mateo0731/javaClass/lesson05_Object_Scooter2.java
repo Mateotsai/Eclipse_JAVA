@@ -1,8 +1,8 @@
 package tw.mateo0731.javaClass;
 
-import tw.Object.Bike;
-import tw.Object.Car;
-import tw.Object.Scooter;
+import tw.API.vehicle.Bike;
+import tw.API.vehicle.Car;
+import tw.API.vehicle.Scooter;
 
 public class lesson05_Object_Scooter2 {
 

@@ -11,7 +11,7 @@ import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import tw.Object.MyPanelV2;
+import tw.IDPanel.MyPanelV2;
 
 
 public class MySignV2 extends JFrame{
