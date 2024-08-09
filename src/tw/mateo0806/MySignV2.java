@@ -5,18 +5,21 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import tw.IDPanel.MyPanelV2;
+import tw.API.MyPanel.MyPanelV2;
 
 
 public class MySignV2 extends JFrame{
 	private MyPanelV2 myPanel;
-	private JButton clear, undo, redo, color; 
+	private JButton clear, undo, redo, color, saveObj, loadObj, saveJPEG; 
 	
 	public MySignV2() {
 		super("Sign App");
@@ -29,8 +32,12 @@ public class MySignV2 extends JFrame{
 		undo = new JButton("Undo");
 		redo = new JButton("Redo");
 		color = new JButton("Color");
+		saveObj = new JButton("Save");
+		loadObj = new JButton("Load");
+		saveJPEG = new JButton("Save JPEG");
 		JPanel top = new JPanel(new FlowLayout());
 		top.add(clear); top.add(undo); top.add(redo);top.add(color);
+		top.add(saveObj);top.add(loadObj);top.add(saveJPEG);
 		add(top, BorderLayout.NORTH);
 		
 		setSize(800,600);
@@ -67,6 +74,33 @@ public class MySignV2 extends JFrame{
 				changeColor();
 			}
 		});
+		
+		saveObj.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				saveObject();
+				
+			}
+		});
+		loadObj.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				loadObject();
+			}
+		});
+		saveJPEG.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			try {
+				myPanel.saveJPEG();
+				System.out.println("OK");
+			}catch(Exception e1) {
+				System.out.println(e1);
+			}
+			
+			}
+		});
 	}
 	
 	
@@ -77,8 +111,40 @@ public class MySignV2 extends JFrame{
 		}
 	}
 	
+	
+	private void saveObject() {
+		JFileChooser jfc = new JFileChooser();
+		if (jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+			File file = jfc.getSelectedFile();
+			try {
+				myPanel.saveLines(file);
+				JOptionPane.showMessageDialog(null, "Save Success");
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Save Failure");
+			}
+		}
+	}
+	
+	private void loadObject() {
+		JFileChooser jfc = new JFileChooser();
+		if (jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+			File file = jfc.getSelectedFile();
+			try {
+				myPanel.loadLines(file);
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Load Failure");
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		new MySignV2();
 	}
+
 
 }
