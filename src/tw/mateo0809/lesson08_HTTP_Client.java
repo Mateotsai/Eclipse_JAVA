@@ -11,7 +11,7 @@ public class lesson08_HTTP_Client {
 
 	public static void main(String[] args) {
 		
-		try {
+		try { 					//抓頁面原始碼
 			URL url = new URL("https://www.iii.org.tw");//頁面原始碼
 		URLConnection conn = url.openConnection();
 		BufferedInputStream bin = new BufferedInputStream(conn.getInputStream());

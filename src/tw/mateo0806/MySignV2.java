@@ -14,12 +14,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import tw.API.MyPanel.MyClock;
 import tw.API.MyPanel.MyPanelV2;
 
 
 public class MySignV2 extends JFrame{
 	private MyPanelV2 myPanel;
 	private JButton clear, undo, redo, color, saveObj, loadObj, saveJPEG; 
+	private MyClock myClock;
 	
 	public MySignV2() {
 		super("Sign App");
@@ -35,9 +37,10 @@ public class MySignV2 extends JFrame{
 		saveObj = new JButton("Save");
 		loadObj = new JButton("Load");
 		saveJPEG = new JButton("Save JPEG");
+		myClock = new MyClock();
 		JPanel top = new JPanel(new FlowLayout());
 		top.add(clear); top.add(undo); top.add(redo);top.add(color);
-		top.add(saveObj);top.add(loadObj);top.add(saveJPEG);
+		top.add(saveObj);top.add(loadObj);top.add(saveJPEG);top.add(myClock);
 		add(top, BorderLayout.NORTH);
 		
 		setSize(800,600);
