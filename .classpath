@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="tw.API"/>
 	<classpathentry kind="lib" path="C:/Users/User/eclipse-workspace/JavaLesson/dir1/json-20240303.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/eclipse-workspace/JavaLesson/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
