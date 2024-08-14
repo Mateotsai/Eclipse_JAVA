@@ -1,3 +1,4 @@
+package tw.classPon;
 class lesson11_ClassMethod{
 	public static void main(String[] args) {
 		

@@ -1,3 +1,4 @@
+package tw.classPon;
 class Test1{
 	static int a = 10;
 	static String s = "Hello Class";
