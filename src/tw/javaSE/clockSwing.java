@@ -17,7 +17,8 @@ public class clockSwing extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // 設置抗鋸齒
+        // 設置抗鋸齒analog
+
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         //計算時鐘大小和位置
