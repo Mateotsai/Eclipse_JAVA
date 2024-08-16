@@ -1,7 +1,9 @@
 package tw.API.vehicle;
 
+import java.io.Serializable;
+
 //定義"物件"的"類別class"
-public class Bike {
+public class Bike implements Serializable {
 //	private double speed;  //設定物件的"屬性"，設定private，引用的人不能亂改屬性
 	protected double speed; //改成protected，繼承子類別的人可以使用
 	
