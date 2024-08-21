@@ -16,16 +16,16 @@ public class Brad12 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String name = request.getParameter("name");
-//		String x = request.getParameter("x");
-		
-		
-		int intX =(Integer)request.getAttribute("x");
-		String aname =(String)request.getAttribute("name");
-		
-		
-		response.getWriter().printf("Welcome,%s, %d, %s",name,intX,aname);
-		
+//		String name = request.getParameter("name");
+//
+//		
+//		
+//		int intX =(Integer)request.getAttribute("x");
+//		String aname =(String)request.getAttribute("name");
+//		
+//		
+//		response.getWriter().printf("Welcome,%s, %d, %s",name,intX,aname);
+//		
 
 	}
 
