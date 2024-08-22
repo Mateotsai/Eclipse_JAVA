@@ -3,6 +3,7 @@ package tw.apis;
 public class Member {
 	private int id;
 	private String account, passwd, name;
+	
 	public int getId() {
 		return id;
 	}
@@ -28,5 +29,8 @@ public class Member {
 		this.name = name;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return String.format("%d : %s", id, name);
+	}
 }

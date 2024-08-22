@@ -9,9 +9,9 @@
 	<body>
 	
 	<form action="brad25.jsp">
-	Account: <input name="account" /> <br />
-	Name: <input name="name" /> <br />
-	<input type="submit">
+		Account: <input name="account" /> <br />
+		Name: <input name="name" /> <br />
+		<input type="submit" value="test" />
 	</form>
 	
 

@@ -1,9 +1,9 @@
+<%@page import="tw.apis.Bike"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    	int max = Integer.parseInt(request.getRealPath("max"));
-    	request.setAttribute("name","Brad");
-    	request.setAttribute("max",max);
+	String name = (String)request.getAttribute("name");
+	Bike bike = (Bike)request.getAttribute("bike");
     %>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,8 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-	I am Brad22 <br>
-	<jsp:forward page="brad22.jsp"></jsp:forward>
+		I am Brad22 <br>
+		Welcome, <%= name %><br>
+		Bike speed = <%= bike.getSpeed() %>
 	</body>
 </html>

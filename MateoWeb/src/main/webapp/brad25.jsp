@@ -1,14 +1,10 @@
-
-<%@page import="tw.apis.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<jsp:useBean id="member1" class="tw.apis.Member"></jsp:useBean>
+<jsp:useBean id="member" class="tw.apis.Member"></jsp:useBean>
 <jsp:setProperty property="id" value="1" name="member" />
 <jsp:setProperty property="account" value="${param.account }" name="member" />
 <jsp:setProperty property="name" value="${param.name }" name="member" />
-    
-    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,6 +17,13 @@
 			<jsp:getProperty property="account" name="member" />
 			<jsp:getProperty property="name" name="member" />
 		Member:
+			<%= member.getId() %> : <%= member.getAccount() %> : <%= member.getName() %>
+			<hr />			
+		Member:
+			${member.id } : ${member.account } : ${member.name }
+			<hr />			
+		${member }<br />
+		${Math.random() }
 		
 	
 	</body>

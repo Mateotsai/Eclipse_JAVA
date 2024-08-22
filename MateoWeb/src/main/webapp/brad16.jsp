@@ -5,7 +5,7 @@
 	String errType = request.getParameter("errType");
 	if (errType != null){
 		switch (errType){
-			case "1": mesg = "帳號重複"; break;
+			case "1": mesg = "Account EXIST!"; break;
 			case "2": mesg = "資料庫讀取失敗"; break;
 			case "3": mesg = "資料庫新增失敗"; break;
 		}
@@ -27,9 +27,9 @@
 		}
 	</script>
 		
-	<form action="Register" method="post">
+	<form action="Register" method="post" onsubmit="return checkForm();"> 
 		Account : <input name="account" /><br />
-		Password : <input name="passwd" /><br />
+		Password : <input name="passwd" type="password" /><br />
 		Name : <input name="name" /><br />
 		<input type="submit" value="register"/><br />
 	</form>

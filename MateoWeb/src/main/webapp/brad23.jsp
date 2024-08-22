@@ -19,11 +19,16 @@
 	</head>
 	<body>
 		Member1: (使用標籤bean語法創建)
-		<jsp:getProperty property="id" name="member1" />
-		<jsp:getProperty property="account" name="member1" />
-		<jsp:getProperty property="name" name="member1" />
+			<jsp:getProperty property="id" name="member1" />
+			<jsp:getProperty property="account" name="member1" />
+			<jsp:getProperty property="name" name="member1" />
+			<hr />
 		Member2: (使用java語法創建)
 			<%= member2.getId() %> : <%= member2.getAccount() %> : <%= member2.getName() %>
-
+			<hr />
+		Member1:  (使用Bean可以再用java語法創建相容，使用java語法創建的沒辦法用Bean讀取>)
+			<%= member1.getId() %> : <%= member1.getAccount() %> : <%= member1.getName() %> : 
+			<%= member1 %>
+			<hr />
 	</body>
 </html>

@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-	</head>
-	<body>
-I am brad19
-	</body>
-</html>
+I am Brad19<hr />
+Lottery:<%= (int)(Math.random()*49+1) %><br />
+<%
+	int x = Integer.parseInt(request.getParameter("x")) ;
+	int y = Integer.parseInt(request.getParameter("y")) ;
+	out.print(String.format("%d + %d = %d", x, y, x+y));
+%>

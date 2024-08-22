@@ -11,7 +11,7 @@ import tw.apis.MemberDB;
 
 @WebServlet("/Register")
 public class Register extends HttpServlet { 
-	private MemberDB memberDB = null;; //連結資料表的建構式  =null等同於初始化
+	private MemberDB memberDB = null; //連結資料表的建構式  =null等同於初始化
 	
 	public Register() {
 		try {
@@ -25,7 +25,7 @@ public class Register extends HttpServlet {
 		if (memberDB == null) return;
 		
 		request.setCharacterEncoding("UTF-8");
-		String account = request.getParameter("acccount");
+		String account = request.getParameter("account");
 		String passwd = request.getParameter("passwd");
 		String name = request.getParameter("name");
 		
@@ -44,6 +44,9 @@ public class Register extends HttpServlet {
 			//如果帳號有重複，轉回去Brad16頁面，並帶入參數顯示給使用者
 		}
 		
+		System.out.println("Account: " + account);
+		System.out.println("Password: " + passwd);
+		System.out.println("Name: " + name);
 	}
 
 }

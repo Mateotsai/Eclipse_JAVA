@@ -1,7 +1,6 @@
 package tw.apis;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +24,7 @@ public class MemberDB {
 	
 	public MemberDB() throws Exception{
 		Properties prop = new Properties();
-		prop.put("user", USER); prop.put("passwd", PASSWORD);
+		prop.put("user", USER); prop.put("password", PASSWORD);
 		
 		Class.forName(DRIVER);
 		conn = DriverManager.getConnection(URL, prop);
@@ -41,7 +40,7 @@ public class MemberDB {
 			return rs.getInt("count") > 0; 
 			//count是上面SQL查詢設定的別名(搜尋到的帳號)，判斷>0代表帳號重複
 		} catch (SQLException e) {
-			System.out.println("ERROR(isAccountExsisting)");
+			System.out.println("ERROR(1)");
 		}
 		return true;
 	}

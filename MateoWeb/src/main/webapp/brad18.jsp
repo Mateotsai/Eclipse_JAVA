@@ -9,8 +9,10 @@
 	<body>
 	Hello,World <br />
 	<hr />
-	<jsp:include page="brad19.jsp"></jsp:include>
+	<jsp:include page="brad19.jsp">
 		<jsp:param value="10" name="x"/>
+		<jsp:param value="3" name="y"/>
+	</jsp:include>	
 	<hr />
 	<jsp:include page="brad20.jsp"></jsp:include>
 	<hr />
