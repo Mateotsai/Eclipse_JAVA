@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="Brad08" method="get"> 
+			Account:<input name="account" type="text" /> <br />
+			Password: <input name="passwd" type="password"/> <br />
+			Gender: <input type="radio" name="gender" value="m" checked/>Male
+			<input type="radio" name="gender" value="f" />Female <br />
+			興趣: <br /> 
+				<input type="checkbox" name="habbit" value="1"/>打電腦 <br />
+				 <input type="checkbox" name="habbit" value="2"/>打麻將 <br />
+				 <input type="checkbox" name="habbit" value="3"/>打電玩 <br />
+				 <input type="checkbox" name="habbit" value="4"/>打手機 <br />
+				 <input type="checkbox" name="habbit" value="5"/>打毛線 <br />
+				 <input type="checkbox" name="habbit" value="6"/>打籃球 <br />
+				 <hr />
+			<input type="submit" value="Register" />
+		</form>
+		
+		
+		<h5>表格的method設成post，避免密碼會反映在URL被人看到</h5>
+		<h5>預設的method是get，僅有檔案上傳會使用，大多提交資料都用post</h5>
+		<h5>性別的選項中設立name=gender來設立群組，強制轉單選題</h5>
+		<h5></h5>
+		<h5></h5>
+		<h5></h5>
+	</body>
+</html>
