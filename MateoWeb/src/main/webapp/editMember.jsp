@@ -6,28 +6,40 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
-<%@ page import="org.mindrot.*" %>
-<c:if test="${empty member.account }">
-	<c:redirect url="login.jsp"></c:redirect>   
-</c:if>
-<c:if test="${!empty param.account }">
-	<c:if test="${pageContext.request.method !='POST'}">
+<c:if test="${!empty member.account }">
 		<c:redirect url="login.jsp"></c:redirect>
 </c:if>
-	<sql:setDataSource
+<sql:setDataSource
 		driver="com.mysql.cj.jdbc.Driver"
 		url="jdbc:mysql://localhost/brad"
 		user="root"
 		password="root"
 	/>
+
+<c:if test="${!empty param.editid }">
+	<sql:query var="rs">
+		SELECT * FROM member WHERE id = ?
+		<sql:param>${param.editid }</sql:param>
+	</sql:query>
+	<c:if test="${rs.rowCount == 0}"><c:redirect url="main.jsp"></c:redirect> </c:if>
+</c:if>
+
+<c:if test="${empty param.account }">
+
+	<c:if test="${pageContext.request.method !='POST'}">
+		<c:redirect url="logout.jsp"></c:redirect>
+	</c:if>
+	
 	<sql:update>
-		INSERT INTO member (account,passwd,name) VALUES (?,?,?)
+		UPDATE member SET account=?,passwd=?,name=? WHERE id = ?
 		<sql:param>${param.account }</sql:param>
 		<sql:param>${BCrypt.hashpw(param.passwd, BCrypt.gensalt()) }</sql:param>
 		<sql:param>${param.name }</sql:param>
+		<sql:param>${param.id }</sql:param>
 	</sql:update>
 	<c:redirect url="main.jsp"></c:redirect>
 </c:if>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,13 +47,15 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-	Add Member Page
+	Edit Member Page
 	<form method="post">
-		Account: <input name="account"> <br />
+		<input type="hidden" name="id" value="${rs.rows[0].id }" >
+		Account: <input name="account" value="${rs.rows[0].account }"> <br />
 		Password: <input name="passwd" type="password"> <br />
-		Name: <input name="name"> <br />
-		<input type ="submit" value ="Add Member" />
+		Name: <input name="name" value="${rs.rows[0].name}"> <br />
+		<input type ="submit" value ="Update" />
 	
 	</form>
+
 	</body>
 </html>

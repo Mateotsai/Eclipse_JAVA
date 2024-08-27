@@ -46,6 +46,7 @@
 			<th>Account</th>
 			<th>Name</th>
 			<th>Delete</th>
+			<th>Edit</th>
 		</tr>
 		<sql:query var="rs">
 		SELECT * FROM member
@@ -56,6 +57,7 @@
 				<td>${row.account}</td>
 				<td>${row.name}</td>
 				<td> <a href="#" onclick="return isDel(${row.id});">Delete</a></td>
+				<td> <a href="editMember.jsp?editId=${row.id }" >Edit</a></td>
 			</tr>
 		</c:forEach>
 		

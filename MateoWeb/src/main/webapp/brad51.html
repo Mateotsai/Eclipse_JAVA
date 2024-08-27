@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+	function searchOrder() {
+		var orderId = $('#orderId').val();
+		
+				$.ajax({
+					url : 'brad52.jsp',
+					method : 'GET',
+					data : {
+						orderId : orderId
+					},
+					success : function(response) {
+						var data = JSON.parse(response);
+						$('#cid').text(data.CustomerID);
+						$('#date').text(data.OrderDate);
+
+						var tableHtml = '<tr><th>Product ID</th><th>Product Name</th><th>Unit Price</th><th>Quantity</th></tr>';
+						data.Details.forEach(function(item) {
+							tableHtml += '<tr>';
+							tableHtml += '<td>' + item.ProductID + '</td>';
+							tableHtml += '<td>' + item.ProductName + '</td>';
+							tableHtml += '<td>' + item.UnitPrice + '</td>';
+			                tableHtml += '<td>' + item.Quantity + '</td>';
+							tableHtml += '</tr>';
+						});
+						$('#table').html(tableHtml);
+					},
+					error : function(xhr, status, error) {
+						console.error("Error: " + error);
+					}
+				});
+	}
+</script>
+
+
+</head>
+<body>
+	<h1>Brad Big Company</h1>
+	<hr />
+	Order ID:
+	<input id="orderId" />
+	<input type="button" onclick="searchOrder()" value="search" />
+	<hr />
+	Customer ID:
+	<span id="cid"></span>
+	<br /> Date:
+	<span id="date"></span>
+	<br />
+	<table id="table" width="100%" border="1">
+		<tr>
+			<th>Product ID</th>
+			<th>Product Items</th>
+			<th>Product Unit Price</th>
+			<th>Product Quantity</th>
+		</tr>
+
+	</table>
+
+</body>
+</html>

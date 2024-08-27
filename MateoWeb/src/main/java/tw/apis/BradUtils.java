@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.SortedMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -69,5 +70,26 @@ public class BradUtils {
 		return items;
 	}
 	
-	
+	public static String order2JSON(SortedMap[] rows) {
+	  if (rows == null || rows.length == 0) return "{}";
+	    
+	  StringBuilder sb = new StringBuilder("{");
+	    sb.append("\"OrderID\":\"").append(rows[0].get("OrderID")).append("\",");
+	    sb.append("\"CustomerID\":\"").append(rows[0].get("CustomerID")).append("\",");
+	    sb.append("\"OrderDate\":\"").append(rows[0].get("OrderDate")).append("\",");
+	    sb.append("\"Details\":[");
+	    
+	    for (int i = 0; i < rows.length; i++) {
+	        if (i > 0) sb.append(",");
+	        sb.append("{");
+	        sb.append("\"ProductID\":\"").append(rows[i].get("ProductID")).append("\",");
+	        sb.append("\"ProductName\":\"").append(rows[i].get("ProductName")).append("\",");
+	        sb.append("\"UnitPrice\":").append(rows[i].get("UnitPrice")).append(",");
+	        sb.append("\"Quantity\":").append(rows[i].get("Quantity"));
+	        sb.append("}");
+	    }
+	    
+	    sb.append("]}");
+	    return sb.toString();
+	}
 }
