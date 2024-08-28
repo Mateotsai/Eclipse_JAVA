@@ -25,7 +25,7 @@ public class Brad15 extends HttpServlet {
 
 		//運算工作指派出去
 		try {
-			tw.apis.MyModel myModel = new tw.apis.MyModel(x,y);
+			tw.mateo.apis.MyModel myModel = new tw.mateo.apis.MyModel(x,y);
 			String result = myModel.plus();
 			request.setAttribute("result", result);
 			request.setAttribute("x", x);

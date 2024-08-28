@@ -1,4 +1,4 @@
-<%@page import="tw.apis.Bike"%>
+<%@page import="tw.mateo.apis.Bike"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%

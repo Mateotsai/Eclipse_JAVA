@@ -22,7 +22,7 @@
 
 	<hr />
 	
-	<jsp:useBean id="member" class="tw.apis.Member"></jsp:useBean>
+	<jsp:useBean id="member" class="tw.mateo.apis.Member"></jsp:useBean>
 	<c:set target="${member}" property="id">1</c:set>
 	<c:set target="${member}" property="account">account</c:set>
 	<c:set target="${member}" property="name">Brad</c:set>

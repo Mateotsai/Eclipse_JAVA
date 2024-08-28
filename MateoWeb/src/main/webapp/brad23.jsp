@@ -1,12 +1,11 @@
-<%@page import="tw.apis.* "%>
+<%@page import="tw.mateo.apis.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
-	Member member2 = new Member();
+<%
+Member member2 = new Member();
 	member2.setId(2); member2.setAccount("amy"); member2.setName("Amy");
-	
 %>
-<jsp:useBean id="member1" class="tw.apis.Member"></jsp:useBean>
+<jsp:useBean id="member1" class="tw.mateo.apis.Member"></jsp:useBean>
 <jsp:setProperty property="id" value="1" name="member1" />
 <jsp:setProperty property="account" value="brad" name="member1" />
 <jsp:setProperty property="name" value="Brad" name="member1" />

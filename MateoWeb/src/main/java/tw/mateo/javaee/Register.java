@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tw.apis.MemberDB;
+import tw.mateo.apis.MemberDB;
 
 @WebServlet("/Register")
 public class Register extends HttpServlet { 

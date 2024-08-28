@@ -36,10 +36,11 @@
 	</head>
 	<body>
 	Add Member Page
-	<form method="post">
+	<form action="Brad21" method="post" enctype="multipart/form-data">
 		Account: <input name="account"> <br />
 		Password: <input name="passwd" type="password"> <br />
 		Name: <input name="name"> <br />
+		Icon: <Input type="file" name="icon"> <br />
 		<input type ="submit" value ="Add Member" />
 	
 	</form>
