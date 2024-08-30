@@ -6,7 +6,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
-<%@ page import="org.mindrot.*" %>
 <c:if test="${empty member.account }">
 	<c:redirect url="login.jsp"></c:redirect>   
 </c:if>
@@ -22,7 +21,7 @@
 	/>
 	<sql:update>
 		INSERT INTO member (account,passwd,name) VALUES (?,?,?)
-		<sql:param>${param.account }</sql:param>
+		<sql:param>${param.account } </sql:param>
 		<sql:param>${BCrypt.hashpw(param.passwd, BCrypt.gensalt()) }</sql:param>
 		<sql:param>${param.name }</sql:param>
 	</sql:update>
@@ -33,11 +32,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			function isAccountExit(){
+				$.get("isAccountExit.jsp?account="$('#account').val(),function(data,status)){
+					if(status == 'success'){
+						$('mesg').html(data.count>0? "Account Exist": "");
+					}
+				});
+			}
+		</script>
+		
 	</head>
 	<body>
 	Add Member Page
-	<form action="Brad21" method="post" enctype="multipart/form-data">
-		Account: <input name="account"> <br />
+	<form action="Brad22" method="post" enctype="multipart/form-data">
+		Account: <input name="account" id="account" onblur='isAccountExist()'><span id='mesg'></span> <br />
 		Password: <input name="passwd" type="password"> <br />
 		Name: <input name="name"> <br />
 		Icon: <Input type="file" name="icon"> <br />

@@ -14,9 +14,10 @@
 	<body>
 	Login Page
 	<hr />
-	<form action="checkAccount.jsp" method="post">
+	<form action="checkAccount2.jsp" method="post">
 		Account: <input name="account"> <br />
 		Password: <input name="passwd" type="password"> <br />
+		<input type="checkbox" name="rememberMe" value="1"> Remember me <br />
 		<input type ="submit" value ="Login" />
 	
 	</form>

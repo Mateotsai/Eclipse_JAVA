@@ -15,18 +15,10 @@
 
 <c:if test="${!param.delid }">
 	<sql:update>
-	DELETE FROM member WHERE id = ?
-	<sql:param>${param.delid }</sql:param>
+		DELETE FROM member WHERE id = ?
+		<sql:param>${param.delid }</sql:param>
 	</sql:update>
 </c:if>
-
-<script>
-    function isDel(id) {
-        if (confirm("是否要刪除?" )) {
-            window.location.href = "?delid=" + id;
-        }
-    }
-</script>
 
 <!DOCTYPE html>
 <html>
@@ -35,11 +27,13 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-	Welcome, ${member.account } <br />
+	Welcome, ${member.name } <br />
+	<img src="data:image/png; base64, ${member.icon} }" />
+	<hr />
 	<a href="logout.jsp">log out</a> <br />
 	<a href="addMember.jsp">Add Member</a> <br />
-	<a href="editMember.jsp">Edit Member</a> <br />
 	<hr />
+	<a href="editMember.jsp">Edit Member</a> <br />
 	<table border="1" width=100%>
 		<tr>
 			<th>ID</th>
@@ -49,14 +43,21 @@
 			<th>Edit</th>
 		</tr>
 		<sql:query var="rs">
-		SELECT * FROM member
+			SELECT * FROM member
 		</sql:query>
+		<script>
+		    function isDel(id) {
+		        if (confirm("是否要刪除?" )) {
+		            window.location.href = "?delid=" + id;
+		        }
+		    }
+		</script>
 		<c:forEach var="row" items="${rs.rows}">
 			<tr>
 				<td>${row.id}</td>
 				<td>${row.account}</td>
 				<td>${row.name}</td>
-				<td> <a href="#" onclick="return isDel(${row.id});">Delete</a></td>
+				<td><a href="?delid=${row.id }" onclick="return isDel('${row.name }');">Delete</a></td>
 				<td> <a href="editMember.jsp?editId=${row.id }" >Edit</a></td>
 			</tr>
 		</c:forEach>
